@@ -1,0 +1,23 @@
+en:
+  users:
+    form:
+      save: Save
+      cancel: Cancel
+    show:
+      title: User detail
+      index: All users
+      edit:
+      destroy:
+      first_name: First name
+      last_name: Last name
+      email: Email
+      note: Note
+      god: God
+    index:
+      title: All users
+      new: New user
+      index: All users
+    edit:
+      title: Edit user
+    new:
+      title: New user
