@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-
     if @user.save
       redirect_to @user, notice: I18n.t("#{controller_name}.controller.#{action_name}")
     else
@@ -54,6 +53,10 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :note, :god)
+      if current_user.god
+        params.require(:user).permit(:first_name, :last_name, :email, :note, :god)
+      else
+        params.require(:user).permit(:first_name, :last_name, :email, :note)
+      end
     end
 end

@@ -19,14 +19,15 @@
   .form-group
     = f.label :note, t('.note', :default => t("users.attributes.note")), class: 'col-sm-3 control-label'
     .col-sm-6
-      = f.text_field :note, class: 'form-control', required: true
-      
-  .form-group
-    .col-sm-offset-3.col-sm-6
-      .checkbox
-        %label
-          = f.check_box :god
-          = t('.god', :default => t("users.attributes.god"))
+      = f.text_area :note, class: 'form-control'
+  
+  - if current_account.god
+    .form-group
+      .col-sm-offset-3.col-sm-6
+        .checkbox
+          %label
+            = f.check_box :god
+            = t('.god', :default => t("users.attributes.god"))
       
      
 

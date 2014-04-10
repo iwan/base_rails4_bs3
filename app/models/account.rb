@@ -6,7 +6,7 @@ class Account < ActiveRecord::Base
 
 
   belongs_to :user
-  delegate :god, to: :user
+  delegate :god, :god?, to: :user
 
   def name
     (user && user.full_name) || email

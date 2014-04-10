@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 
   has_one :account
 
+  def god?
+    god
+  end
 end
