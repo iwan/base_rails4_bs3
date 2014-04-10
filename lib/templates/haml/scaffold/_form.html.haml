@@ -2,11 +2,20 @@
   = error_notification(@<%= singular_name %>) if @<%= singular_name %>.errors.any?
 
 <% attributes.each do |attribute| -%>
+<% if attribute.field_type==:check_box -%>
+  .form-group
+    .col-sm-offset-3.col-sm-6
+      .checkbox
+        %label
+          = f.check_box :<%= attribute.name %>
+          = t('.<%= attribute.name %>', :default => t("<%= plural_name %>.attributes.<%= attribute.name %>"))
+<% else -%>
   .form-group
     = f.label :<%= attribute.name %>, t('.<%= attribute.name %>', :default => t("<%= plural_name %>.attributes.<%= attribute.name %>")), class: 'col-sm-3 control-label'
     .col-sm-6
-      = f.text_field :<%= attribute.name %>, class: 'form-control', required: true # , placeholder: '<%= singular_name %> name', autocomplete: 'false'
-      
+      = f.<%= attribute.field_type -%> :<%= attribute.name %>, class: 'form-control' #, required: true, placeholder: '<%= singular_name %> name', autocomplete: 'false'
+<% end -%>
+
 <% end -%>     
 
   .form-group
