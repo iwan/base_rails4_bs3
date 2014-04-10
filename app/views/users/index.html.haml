@@ -1,0 +1,39 @@
+- content_for :title do
+  = t('.title')
+
+%ol.breadcrumb
+  %li.active= t('.index')
+
+
+.page-header
+  %p.pull-right
+    = link_to_new(User, new_user_path, :button => :norm, :label => t(".new"), :glyphicon  => "plus-sign")
+  %h1= t('.title')
+
+- if @users.empty?
+  .alert.alert-info= t(:no_users)
+- else
+  %table.table.table-bordered.table-condensed
+    %thead
+      %tr
+        %th= t '.first_name', :default => t("users.attributes.first_name")
+        %th= t '.last_name', :default => t("users.attributes.last_name")
+        %th= t '.email', :default => t("users.attributes.email")
+        %th= t '.note', :default => t("users.attributes.note")
+        %th= t '.god', :default => t("users.attributes.god")
+        %th.right=t '.actions', :default => t("helpers.actions")
+
+    %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.first_name, user
+        %td= link_to user.last_name, user
+        %td= link_to user.email, user
+        %td= link_to user.note, user
+        %td= link_to user.god, user
+        
+        %td.right
+          = link_to_show(user, user_path(user))
+          = link_to_edit(user, edit_user_path(user))
+          = link_to_destroy(user, user_path(user))
+
