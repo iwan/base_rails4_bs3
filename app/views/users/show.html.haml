@@ -30,7 +30,7 @@
         %dd= @user.note
       
         %dt= t('.god', :default => t("users.attributes.god"))
-        %dd= @user.god
+        %dd= bool_to_icon(@user.god)
 
       %dl.dl-horizontal.buttons
         %td

@@ -4,27 +4,29 @@
   .form-group
     = f.label :first_name, t('.first_name', :default => t("users.attributes.first_name")), class: 'col-sm-3 control-label'
     .col-sm-6
-      = f.text_field :first_name, class: 'form-control', placeholder: 'user name', required: true
+      = f.text_field :first_name, class: 'form-control', required: true
       
   .form-group
     = f.label :last_name, t('.last_name', :default => t("users.attributes.last_name")), class: 'col-sm-3 control-label'
     .col-sm-6
-      = f.text_field :last_name, class: 'form-control', placeholder: 'user name', required: true
+      = f.text_field :last_name, class: 'form-control', required: true
       
   .form-group
     = f.label :email, t('.email', :default => t("users.attributes.email")), class: 'col-sm-3 control-label'
     .col-sm-6
-      = f.text_field :email, class: 'form-control', placeholder: 'user name', required: true
+      = f.text_field :email, class: 'form-control', required: true
       
   .form-group
     = f.label :note, t('.note', :default => t("users.attributes.note")), class: 'col-sm-3 control-label'
     .col-sm-6
-      = f.text_field :note, class: 'form-control', placeholder: 'user name', required: true
+      = f.text_field :note, class: 'form-control', required: true
       
   .form-group
-    = f.label :god, t('.god', :default => t("users.attributes.god")), class: 'col-sm-3 control-label'
-    .col-sm-6
-      = f.text_field :god, class: 'form-control', placeholder: 'user name', required: true
+    .col-sm-offset-3.col-sm-6
+      .checkbox
+        %label
+          = f.check_box :god
+          = t('.god', :default => t("users.attributes.god"))
       
      
 

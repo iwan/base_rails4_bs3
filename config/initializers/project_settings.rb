@@ -1,9 +1,8 @@
 
 
-Rails.configuration.default_title         = "EZ Project Management Platform"
-Rails.configuration.navbar_brand          = "EZ PMP"
-Rails.configuration.head_meta_description = "Project Management Platform"
+Rails.configuration.default_title         = "My Awesome Application"
+Rails.configuration.navbar_brand          = "Appl"
+Rails.configuration.head_meta_description = "My Awesome Application"
 Rails.configuration.head_meta_author      = "iwan"
-Rails.configuration.local_country         = "ro"
-Rails.configuration.local_currency_code   = "RON"
+Rails.configuration.local_country         = "it"
 

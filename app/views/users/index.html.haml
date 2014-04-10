@@ -19,7 +19,6 @@
         %th= t '.first_name', :default => t("users.attributes.first_name")
         %th= t '.last_name', :default => t("users.attributes.last_name")
         %th= t '.email', :default => t("users.attributes.email")
-        %th= t '.note', :default => t("users.attributes.note")
         %th= t '.god', :default => t("users.attributes.god")
         %th.right=t '.actions', :default => t("helpers.actions")
 
@@ -29,8 +28,7 @@
         %td= link_to user.first_name, user
         %td= link_to user.last_name, user
         %td= link_to user.email, user
-        %td= link_to user.note, user
-        %td= link_to user.god, user
+        %td= bool_to_icon(user.god)
         
         %td.right
           = link_to_show(user, user_path(user))
