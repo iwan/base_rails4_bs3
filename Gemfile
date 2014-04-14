@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.4'
+gem 'rails', '~> 4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -33,6 +33,15 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'brice'     # usate da irb e quindi console
+  gem 'hirb'      # usate da irb e quindi console
+  gem 'awesome_print' # usate da irb e quindi console
+  gem 'thin'
+
+  gem 'quiet_assets'  # hide logs of assets
 end
 
 gem 'sancho', path: ENV['SANCHO_PATH']
