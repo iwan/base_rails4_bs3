@@ -60,6 +60,8 @@ gem 'haml-rails' # non basta quello in sancho!
 gem 'source-sans-pro-rails' # https://github.com/veracross/source-sans-pro-rails
 gem 'font-awesome-rails' # se non lo metto anche qui (c'è anche in sancho) non va... non so perché
 
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x  https://github.com/svenfuchs/rails-i18n
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
