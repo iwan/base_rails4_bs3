@@ -1,0 +1,19 @@
+en:
+  created_at: Created at
+  updated_at: Updated at
+
+  helpers:
+    links:
+      edit: Edit
+      destroy: Destroy
+      show: Show
+      
+    submit:
+      create: "Create a %{model}"
+      update: "Confirm changes to %{model}"
+      post:
+        create: "Add %{model}"
+
+  date:
+    formats:
+      slashed: "%d/%m/%Y"
